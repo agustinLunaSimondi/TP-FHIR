@@ -17,7 +17,27 @@ Una vez ya marcada la solapa anterior tenemos varias opciones en donde en este c
 ![image](Imagenes/crear_recurso_1a.png)
 
 Elegimos un ID para identificarlo de manera univoca en donde seleccionamos uno de fantasia "DOC124". Ademas de esto debemos
-agregar información del paciente dentro de "Contents" en donde se debe crear un body con formato JSON en donde se debe respetar los atributos especificos del tipo de recurso. Por ejemplo le agregamos a nuestro paciente el año de nacimiento bajo el atributo "birthdate", su genero "genre" y asi se puedo ir creando un perfil mucho mas extenso
+agregar información del paciente dentro de "Contents" en donde se debe crear un body con formato JSON en donde se debe respetar los atributos especificos del tipo de recurso. Por ejemplo le agregamos a nuestro paciente el año de nacimiento bajo el atributo "birthdate", su genero "genre" y asi se puedo ir creando un perfil mucho mas extenso.
+El body creado es el siguiente:
+
+```{
+  "resourceType": "Patient",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://example.org/national-id",
+      "value": "DOC124"
+    }
+  ],
+  "name": [
+    {
+      "family": "Smith",
+      "given": ["John"]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1990-01-01"
+}´´´
 
 
 
@@ -39,7 +59,7 @@ En primera parte para solicitar una lectura  es necesario indicar el ID pero no 
 que encontremos la entrada que hemos realizado sin error
 
 ![image](Imagenes/lectura_generada_1b.png)
- Ahora vemos que la accion del API REST es la del GET (a diferencia de antes que hicimos un POST ya que lo estabamos creando). El resto de solapas permanece totalmente igual ya que estaria mostrando el resultado de lectura  mostrnado los Result Narrative y Result Body iguales a los que hemos publicado previamente.
+Ahora vemos que la accion del API REST es la del GET (a diferencia de antes que hicimos un POST ya que lo estabamos creando). El resto de solapas permanece totalmente igual ya que estaria mostrando el resultado de lectura  mostrnado los Result Narrative y Result Body iguales a los que hemos publicado previamente.
 
 
 ## **PARTE 2:** POSTMAN
@@ -75,7 +95,7 @@ Copiamos la respuesta de la Request porque no se puede ver entera en la pantalla
 } ],
 "gender": "male",
 "birthDate": "1946-06-14"
-}```
+}´´´
 
 Los atributos, datos y organización del JSON  es muy similar al caso de HAPI-FHIR. Nuevamente podemos identificar las caracteristicas del paciente al final del JSON , siendo las primeras mismas mas sobre información del recurso en si , id , almacenamiento, historia de editado, entre otras cosas.
 
