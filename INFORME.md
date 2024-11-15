@@ -20,7 +20,7 @@ Elegimos un ID para identificarlo de manera univoca en donde seleccionamos uno d
 agregar información del paciente dentro de "Contents" en donde se debe crear un body con formato JSON en donde se debe respetar los atributos especificos del tipo de recurso. Por ejemplo le agregamos a nuestro paciente el año de nacimiento bajo el atributo "birthdate", su genero "genre" y asi se puedo ir creando un perfil mucho mas extenso.
 El body creado es el siguiente:
 
-```{
+{ 
   "resourceType": "Patient",
   "identifier": [
     {
@@ -37,7 +37,7 @@ El body creado es el siguiente:
   ],
   "gender": "male",
   "birthDate": "1990-01-01"
-}´´´
+}
 
 
 
