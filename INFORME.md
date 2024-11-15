@@ -7,11 +7,18 @@
 
 ## **PARTE 1:** HAPI FHIR
 ![image](Imagenes/pagina_inicial_hapifhir.png)
+Ingresamos a la pagina de HAPI FHIR a traves del link otorgada por la catedra. Lo primero que debemos hacer es 
+dirigirnos a la solapa de paciente y de ahi a la solapa de CRUD operations que nos permitira manejar las
+diferentes herramientas de una API del tipo REST
 
 ### 1. a. Crear un recurso patient utilizando la UI del servidor de HAPI FHIR. Leer el recurso patient creado.
-
+Una vez ya marcada la solapa anterior tenemos varias opciones en donde en este caso debemos ir a la sección de "Create", en donde nos permitira crear un recurso de tipo "Paciente"
 ![image](Imagenes/crear_recurso_1a.png)
+Elegimos un ID para identificarlo de manera univoca en donde seleccionamos uno de fantasia "DOC124". Ademas de esto debemos
+agregar información del paciente dentro de "Contents" en donde se debe crear 
+
 ![image](Imagenes/recurso_generado_1a.png)
+
 ![image](Imagenes/recurso_request_1a.png)
 
 
