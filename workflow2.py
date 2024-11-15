@@ -1,5 +1,5 @@
-from patient2 import create_patient_with_identifie
-from base2 import 
+from patient2 import create_patient_with_identifier as create_patient
+from base2 import send_resource_to_hapi_fhir, get_resource_from_hapi_fhir, search_resource_in_hapi_fhir
 
 
 if __name__ == "__main__":
