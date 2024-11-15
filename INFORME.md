@@ -19,7 +19,7 @@ Una vez ya marcada la solapa anterior tenemos varias opciones en donde en este c
 Elegimos un ID para identificarlo de manera univoca en donde seleccionamos uno de fantasia "DOC124". Ademas de esto debemos
 agregar información del paciente dentro de "Contents" en donde se debe crear un body con formato JSON en donde se debe respetar los atributos especificos del tipo de recurso. Por ejemplo le agregamos a nuestro paciente el año de nacimiento bajo el atributo "birthdate", su genero "genre" y asi se puedo ir creando un perfil mucho mas extenso.
 El body creado es el siguiente:
-
+```json
 { 
   "resourceType": "Patient",
   "identifier": [
@@ -38,7 +38,7 @@ El body creado es el siguiente:
   "gender": "male",
   "birthDate": "1990-01-01"
 }
-
+´´´
 
 
 ![image](Imagenes/recurso_request_1a.png)
