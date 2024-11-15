@@ -21,5 +21,7 @@
 ### 1. a.  Repetir lo anterior utilizando postman online. Luego, leer el recurso creado.
 
 
+## **PARTE 3:** PYTHON
 
+## 3. a. ~
 
