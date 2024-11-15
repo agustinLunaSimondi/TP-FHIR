@@ -38,7 +38,7 @@ El body creado es el siguiente:
   "gender": "male",
   "birthDate": "1990-01-01"
 }
-´´´
+
 
 
 ![image](Imagenes/recurso_request_1a.png)
@@ -72,7 +72,8 @@ Repetimos el mismo proceso en POSTMAN
 
 Copiamos la respuesta de la Request porque no se puede ver entera en la pantalla
 
-```{
+```json
+{
 "resourceType": "Patient",
 "id": "45151351",
 "meta": {
@@ -95,7 +96,7 @@ Copiamos la respuesta de la Request porque no se puede ver entera en la pantalla
 } ],
 "gender": "male",
 "birthDate": "1946-06-14"
-}´´´
+}
 
 Los atributos, datos y organización del JSON  es muy similar al caso de HAPI-FHIR. Nuevamente podemos identificar las caracteristicas del paciente al final del JSON , siendo las primeras mismas mas sobre información del recurso en si , id , almacenamiento, historia de editado, entre otras cosas.
 
