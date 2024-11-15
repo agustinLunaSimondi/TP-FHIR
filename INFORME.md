@@ -31,14 +31,20 @@ Aca ya tenemos el recurso generado, en donde vemos la creación correcta del pac
 Ademas de esto podemos ver el "Result Body" en donde encontramos datos adicionales que se inicializan al crean un nuevo recursco como puede ser su "id" siendo este 45151339 , algo que tendremos que tener en consideración cuando queramos hacer una busqueda
 
 
-### 2. b. Describir brevemente las propiedades del mismo.
+### 1. b. Lectura del recurso creado.
 
 ![image](Imagenes/solicitar_lectura_1b.png)
+
+En primera parte para solicitar una lectura  es necesario indicar el ID pero no el que hemos asignado al paciente por nuestra cuenta sino aquel que crea de anera automatica HAPI FHIR que previamente indicamos como 4515139. Esto permitira
+que encontremos la entrada que hemos realizado sin error
+
 ![image](Imagenes/lectura_generada_1b.png)
+ Ahora vemos que la accion del API REST es la del GET (a diferencia de antes que hicimos un POST ya que lo estabamos creando). El resto de solapas permanece totalmente igual ya que estaria mostrando el resultado de lectura  mostrnado los Result Narrative y Result Body iguales a los que hemos publicado previamente.
+
 
 ## **PARTE 2:** POSTMAN
 
-### 1. a.  Repetir lo anterior utilizando postman online. Luego, leer el recurso creado.
+### 2. a.  Repetir lo anterior utilizando postman online. Luego, leer el recurso creado.
 Repetimos el mismo proceso en POSTMAN
 
 ![image](Imagenes/recurso_postman_2.png)
@@ -46,5 +52,23 @@ Repetimos el mismo proceso en POSTMAN
 
 ## **PARTE 3:** PYTHON
 
-## 3. a. ~
+Para estos puntos hemos dejado todo el codigo dentro del mismo repositorio siguiendo la estructura compartida por las 
+profesoras. El unico archvio nuevo creado seria el del punto c en donde se creo el recurso de "Allergy" el cual se puede
+encontrar en "allergy.py".
+
+En el workflow2.py se podra correr el codigo en donde se resuleven los puntos a,b y c con uso de las funciones a las que 
+llama. Creamos 3 pacientes distintos haciendo uso de la funcion que crea dichos recursos basados en los codigos que 
+proporciono la catedra. Además de esto se creo un codigo propio que permitiese hacer busqueda bajo parametros seleccionados,
+en este caso buscamos todos los pacientes que tengan genero masculino. Por ultimo también optamos por crear el recurso de Allergy el cual indagamos en la documentación para saber como crearlo y declararlo correctamente.
+
+A continuación compartimos lo que se obtiene al correr el codigo
+
+
+![image](Imagenes/python1.png)
+
+![image](Imagenes/python2.png)
+
+
+
+
 
