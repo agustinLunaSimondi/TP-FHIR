@@ -66,7 +66,12 @@ A continuación compartimos lo que se obtiene al correr el codigo
 
 ![image](Imagenes/python1.png)
 
+Creacción de los 3 recursos de pacientes y luego la busqueda del mismo
+
 ![image](Imagenes/python2.png)
+
+Podemos ver que claramente hay varios recursos de pacientes con genero masculino porlo que se muestran solamente los 
+20 primeros encontrados (algo que tambipen ocurre en la pagina de HAPI FHIR)
 
 
 
