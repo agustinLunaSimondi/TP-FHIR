@@ -50,6 +50,35 @@ Repetimos el mismo proceso en POSTMAN
 ![image](Imagenes/recurso_postman_2.png)
 ![image](Imagenes/lectura_postman_2.png)
 
+Copiamos la respuesta de la Request porque no se puede ver entera en la pantalla
+
+```{
+"resourceType": "Patient",
+"id": "45151351",
+"meta": {
+"versionId": "1",
+"lastUpdated": "2024-11-15T13:45:02.471+00:00",
+"source": "#SVSuzcPG2RjYrSAz"
+},
+"text": {
+"status": "generated",
+"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Donald <b>TRUMP </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>DOC124</td></tr><tr><td>Date of birth</td><td><span>14 June 1946</span></td></tr></tbody></table></div>"
+},
+"identifier": [ {
+"use": "official",
+"system": "http://example.org/national-id",
+"value": "DOC124"
+} ],
+"name": [ {
+"family": "Trump",
+"given": [ "Donald" ]
+} ],
+"gender": "male",
+"birthDate": "1946-06-14"
+}```
+
+Los atributos, datos y organización del JSON  es muy similar al caso de HAPI-FHIR. Nuevamente podemos identificar las caracteristicas del paciente al final del JSON , siendo las primeras mismas mas sobre información del recurso en si , id , almacenamiento, historia de editado, entre otras cosas.
+
 ## **PARTE 3:** PYTHON
 
 Para estos puntos hemos dejado todo el codigo dentro del mismo repositorio siguiendo la estructura compartida por las 
@@ -65,8 +94,12 @@ A continuación compartimos lo que se obtiene al correr el codigo
 
 
 ![image](Imagenes/python1.png)
+![image](Imagenes/python3.png)
 
-Creacción de los 3 recursos de pacientes y luego la busqueda del mismo
+Creacción de los 3 recursos de pacientes y luego la busqueda del mismo.
+Buscamos al primer paciente creado a traves de su id el cual obtenemos una vez que hacemos el POST (Obtenemos el id que nos crea de por si el HAPI FHIR )
+Al igual que en los otros ejercicios nos devuelvo el Result Body en un formato JSON. Si bien no es una maera muy estetica de mostrarla, podemos 
+identificar las diversos atributos del recurso como el nombre, ID, fecha de nacimiento, entre otros lo que permite identificar al sujeto en cuestión.
 
 ![image](Imagenes/python2.png)
 
