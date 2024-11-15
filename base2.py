@@ -31,7 +31,7 @@ def get_resource_from_hapi_fhir(resource_id, resource_type):
         print(response.json())
         return None
 
-# Función genérica para buscar recursos FHIR en el servidor HAPI FHIR
+# Función genérica para buscar recursos FHIR en el servidor HAPI FHIR (Punto 3.b)
 def search_resource_in_hapi_fhir(resource_type, search_params):
     url = f"http://hapi.fhir.org/baseR4/{resource_type}"
     headers = {"Accept": "application/fhir+json"}
