@@ -25,7 +25,9 @@ def get_resource_from_hapi_fhir(resource_id, resource_type):
 
     if response.status_code == 200:
         print(f"Recurso {resource_type} encontrado:")
-        return response.json()  # Devuelve el recurso completo en formato JSON
+        resource = response.json()
+        print(resource)
+        # Devuelve el recurso completo en formato JSON
     else:
         print(f"Error al obtener el recurso {resource_type}: {response.status_code}")
         print(response.json())
