@@ -1,4 +1,4 @@
-# Trabajo Práctico N°5
+# Trabajo Práctico N°6
 ![image](Imagenes/logoitba.png)
 
 ## _Autores:_ 
