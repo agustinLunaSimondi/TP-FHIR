@@ -3,6 +3,7 @@ from fhir.resources.patient import Patient
 from fhir.resources.humanname import HumanName
 from fhir.resources.contactpoint import ContactPoint
 from fhir.resources.identifier import Identifier
+from datetime import datetime
 
 
 # Crear el recurso FHIR de paciente con número de documento
@@ -27,6 +28,7 @@ def create_patient_with_identifier(family_name=None, given_name=None, birth_date
     
     # Agregar la fecha de nacimiento
     if birth_date:
+        datetime.strptime(birth_date, "%Y-%m-%d")
         patient.birthDate = birth_date
 
     # Agregar el género
