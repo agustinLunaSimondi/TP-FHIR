@@ -1,3 +1,4 @@
+#Importaciones dde las funciones creadas
 from patient2 import create_patient_with_identifier as create_patient
 from base2 import send_resource_to_hapi_fhir, get_resource_from_hapi_fhir, search_resource_in_hapi_fhir
 
@@ -18,7 +19,7 @@ if __name__ == "__main__":
         print("\nBuscando al primer paciente por ID:")
         get_resource_from_hapi_fhir(patient1_id, "Patient")
     
-    # Buscar todos los pacientes masculinos
+    # Buscar todos los pacientes masculinos para demostrar el uso del search
     print("\nBuscando pacientes masculinos:")
     male_patients = search_resource_in_hapi_fhir("Patient", {"gender": "male"})
     if male_patients:
