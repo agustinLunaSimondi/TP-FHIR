@@ -19,25 +19,25 @@ Una vez ya marcada la solapa anterior tenemos varias opciones en donde en este c
 Elegimos un ID para identificarlo de manera univoca en donde seleccionamos uno de fantasia "DOC124". Ademas de esto debemos
 agregar información del paciente dentro de "Contents" en donde se debe crear un body con formato JSON en donde se debe respetar los atributos especificos del tipo de recurso. Por ejemplo le agregamos a nuestro paciente el año de nacimiento bajo el atributo "birthdate", su genero "genre" y asi se puedo ir creando un perfil mucho mas extenso.
 El body creado es el siguiente:
-```json
-{ 
-  "resourceType": "Patient",
-  "identifier": [
-    {
-      "use": "official",
-      "system": "http://example.org/national-id",
-      "value": "DOC124"
-    }
-  ],
-  "name": [
-    {
-      "family": "Smith",
-      "given": ["John"]
-    }
-  ],
-  "gender": "male",
-  "birthDate": "1990-01-01"
-}
+  ```json
+  { 
+    "resourceType": "Patient",
+    "identifier": [
+      {
+        "use": "official",
+        "system": "http://example.org/national-id",
+        "value": "DOC124"
+      }
+    ],
+    "name": [
+      {
+        "family": "Smith",
+        "given": ["John"]
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1990-01-01"
+  }
 
 
 
@@ -72,31 +72,31 @@ Repetimos el mismo proceso en POSTMAN
 
 Copiamos la respuesta de la Request porque no se puede ver entera en la pantalla
 
-```json
-{
-"resourceType": "Patient",
-"id": "45151351",
-"meta": {
-"versionId": "1",
-"lastUpdated": "2024-11-15T13:45:02.471+00:00",
-"source": "#SVSuzcPG2RjYrSAz"
-},
-"text": {
-"status": "generated",
-"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Donald <b>TRUMP </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>DOC124</td></tr><tr><td>Date of birth</td><td><span>14 June 1946</span></td></tr></tbody></table></div>"
-},
-"identifier": [ {
-"use": "official",
-"system": "http://example.org/national-id",
-"value": "DOC124"
-} ],
-"name": [ {
-"family": "Trump",
-"given": [ "Donald" ]
-} ],
-"gender": "male",
-"birthDate": "1946-06-14"
-}
+  ```json
+  {
+  "resourceType": "Patient",
+  "id": "45151351",
+  "meta": {
+  "versionId": "1",
+  "lastUpdated": "2024-11-15T13:45:02.471+00:00",
+  "source": "#SVSuzcPG2RjYrSAz"
+  },
+  "text": {
+  "status": "generated",
+  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Donald <b>TRUMP </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>DOC124</td></tr><tr><td>Date of birth</td><td><span>14 June 1946</span></td></tr></tbody></table></div>"
+  },
+  "identifier": [ {
+  "use": "official",
+  "system": "http://example.org/national-id",
+  "value": "DOC124"
+  } ],
+  "name": [ {
+  "family": "Trump",
+  "given": [ "Donald" ]
+  } ],
+  "gender": "male",
+  "birthDate": "1946-06-14"
+  }
 
 Los atributos, datos y organización del JSON  es muy similar al caso de HAPI-FHIR. Nuevamente podemos identificar las caracteristicas del paciente al final del JSON , siendo las primeras mismas mas sobre información del recurso en si , id , almacenamiento, historia de editado, entre otras cosas.
 
