@@ -15,12 +15,16 @@ diferentes herramientas de una API del tipo REST
 Una vez ya marcada la solapa anterior tenemos varias opciones en donde en este caso debemos ir a la sección de "Create", en donde nos permitira crear un recurso de tipo "Paciente"
 ![image](Imagenes/crear_recurso_1a.png)
 Elegimos un ID para identificarlo de manera univoca en donde seleccionamos uno de fantasia "DOC124". Ademas de esto debemos
-agregar información del paciente dentro de "Contents" en donde se debe crear 
+agregar información del paciente dentro de "Contents" en donde se debe crear un body con formato JSON en donde se debe respetar los atributos especificos del tipo de recurso. Por ejemplo le agregamos a nuestro paciente el año de nacimiento bajo el atributo "birthdate", su genero "genre" y asi se puedo ir creando un perfil mucho mas extenso
 
-![image](Imagenes/recurso_generado_1a.png)
+
 
 ![image](Imagenes/recurso_request_1a.png)
 
+![image](Imagenes/recurso_generado_1a.png)
+Aca ya tenemos el recurso generado, en donde vemos la creación correcta dle paciente incluyendo datos como el nombre, fecha de nacimiento y genero.
+
+Ademas de esto podemos ver el "Result Body"
 
 
 ### 2. b. Describir brevemente las propiedades del mismo.
