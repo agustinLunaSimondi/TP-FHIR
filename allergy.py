@@ -16,5 +16,5 @@ if __name__ == '__main__':
     allergy = create_allergy("45151396", "Yerba Mate", "Rash", "severe")
     allergy_id = send_resource_to_hapi_fhir(allergy, "AllergyIntolerance")
     if allergy_id:
-        print(f"ID del recurso AllergyIntolerance creado: {allergy_id}")
+        print(f"ID del recurso Allergy Intolerance creado: {allergy_id}")
         get_resource_from_hapi_fhir(allergy_id, "AllergyIntolerance")
