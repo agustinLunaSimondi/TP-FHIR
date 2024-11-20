@@ -129,6 +129,29 @@ identificar las diversos atributos del recurso como el nombre, ID, fecha de naci
 Podemos ver que claramente hay varios recursos de pacientes con genero masculino porlo que se muestran solamente los 
 20 primeros encontrados (algo que tambipen ocurre en la pagina de HAPI FHIR)
 
+### Creación de recurso
+En este trabajo decidimos crear el recurso de "Allergy" al igual que en los otros codigos todo desde Python. Para el codigo en si que se encuentra en "allergy.py" vamos a utilizar las funciones creadas en "base2.py"  para hacer tanto el POST como el GET del recurso y ademas poder asociarlo con un paciente que previamente creamos ( que seria John Smith). El codigo principal es el siguiente:
+
+```python
+  def create_allergy(patient_id, substance, reaction, severity):
+      allergy = AllergyIntolerance(patient=Reference(reference=f"Patient/{patient_id}"),
+                                      code={"text": substance},
+                                      reaction=[{"manifestation": [{"text": reaction}],
+                                                  "severity": severity,
+                                                  "substance": {"text": substance}}])
+      return allergy
+  
+  
+  if __name__ == '__main__':
+      allergy = create_allergy("45151396", "Yerba Mate", "Rash", "severe")
+      allergy_id = send_resource_to_hapi_fhir(allergy, "AllergyIntolerance")
+      if allergy_id:
+          print(f"ID del recurso Allergy Intolerance creado: {allergy_id}")
+          get_resource_from_hapi_fhir(allergy_id, "AllergyIntolerance")
+```
+
+
+
 
 
 
