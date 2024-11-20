@@ -130,7 +130,7 @@ Podemos ver que claramente hay varios recursos de pacientes con genero masculino
 20 primeros encontrados (algo que tambipen ocurre en la pagina de HAPI FHIR)
 
 ### Creación de recurso
-En este trabajo decidimos crear el recurso de "Allergy" al igual que en los otros codigos todo desde Python. Para el codigo en si que se encuentra en "allergy.py" vamos a utilizar las funciones creadas en "base2.py"  para hacer tanto el POST como el GET del recurso y ademas poder asociarlo con un paciente que previamente creamos ( que seria John Smith). El codigo principal es el siguiente:
+En este trabajo decidimos crear el recurso de "Allergy" al igual que en los otros codigos todo desde Python. Para el codigo en si que se encuentra en "allergy.py" vamos a utilizar las funciones creadas en "base2.py"  para hacer tanto el POST como el GET del recurso y además poder asociarlo con un paciente que previamente creamos ( que seria John Smith). El codigo principal es el siguiente:
 
 ```python
   def create_allergy(patient_id, substance, reaction, severity):
@@ -140,8 +140,20 @@ En este trabajo decidimos crear el recurso de "Allergy" al igual que en los otro
                                                   "severity": severity,
                                                   "substance": {"text": substance}}])
       return allergy
-  
-  
+```
+
+En una primera parte definimos la función para poder crear el recurso en si en donde utilizamos la funcion "AllergyIntolerance" proveniente de la biblioteca de FHIR. Para poder trabajr con este tuvimos que indagar sobre la documentación para saber que parametros permitia y cuales debian ingresarse de manera obligatoria (como el caso de referencia al paciente)
+
+#### Atributos
+*patient: Se hace una referencia al paciente para poder asociar el recurso , de esta manera se pasa algun atributo que lo pueda identificar de manera univoca como es el caso del ID creado por FHIR al incializar el recurso de Paciente
+
+*code : En este caso el codigo haria referencia a un codigo unico de la alergia asi como seria el caso de SNOMED. Como admite texto (dado que la clave númerica que utiliza puede manipularse como un string) podemos directamente reutilizar el nombre de la sustancia en caso de no saber el codigo o mismo al ser un caso de fantasia
+
+*reaction : Posee 3 campos diferentes siendo estos "manifestation", "seeverity" y "substance". La manifestación de tipo texto (al igual que el caso de la substancia) alude a la reacción en si que produce la substancia responsable de la alergia. Por ejemplo esto podria ser, sudor, picazón, ceguera, entre otros. Por otro lado la severidad alude a la gravedad de la manifestación y este tiene valores restringidos (por esta razón no vemos el campo de texto). Estos valores son "mild", "moderate" y "severe". Finalmente substance refiere a la substancia en si responsable de producir la alergia.
+
+### Workflow del recurso creado
+
+```python
   if __name__ == '__main__':
       allergy = create_allergy("45151396", "Yerba Mate", "Rash", "severe")
       allergy_id = send_resource_to_hapi_fhir(allergy, "AllergyIntolerance")
@@ -150,9 +162,7 @@ En este trabajo decidimos crear el recurso de "Allergy" al igual que en los otro
           get_resource_from_hapi_fhir(allergy_id, "AllergyIntolerance")
 ```
 
-
-
-
+Creamos el recurso asociandolo con el paciente John Smith utilizando su ID. Como podemos notar este mismo tiene una alergia a la Yerba Mate severa que le produce un sarpullido. Posteriormente se hace el POST del recurso de AllergyIntolerance y se obtiene el ID generado por FHIR. Finalmente en caso de exito se muestra el ID creado y se obtiene los datos del mismo al hacer un GET utilizando el mismo ID creado
 
 
 
